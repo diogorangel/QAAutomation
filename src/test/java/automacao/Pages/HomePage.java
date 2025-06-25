@@ -1,7 +1,9 @@
 package automacao.Pages;
 
 import java.util.List;
-
+import java.time.Duration;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -35,8 +37,8 @@ public class HomePage extends BasePage {
     }
 
     public void waitInvisibility(By elemento) {
-        WebDriverWait webDriverWait = new WebDriverWait(driver, 15);
-       webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(elemento));
+        int timeoutInSeconds = 30; // Your integer value
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
     }
 
 }
